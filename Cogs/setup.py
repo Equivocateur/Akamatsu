@@ -8,5 +8,5 @@ class Setup(commands.Cog):
 
     @commands.command(name="feed")
     async def setfeed(self, ctx, channel):
-        self.parent.feed = channel
+        self.parent.feed = await self.parent.fetch_channel(channel)
         await ctx.reply(f"Feed changed to <#{channel}>")
