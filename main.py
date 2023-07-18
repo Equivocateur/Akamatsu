@@ -9,7 +9,7 @@ class Akamatsu(commands.Bot):
 
     def __init__(self, token, pref):
         super().__init__(command_prefix=pref, case_insensitive=True, intents=discord.Intents.all())
-        self.feed = 0
+        self.feed = config.FEED
         self.taskmaster = TaskMaster(self)
         self.run(token)
 
